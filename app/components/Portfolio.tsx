@@ -6,7 +6,7 @@ export default function Portfolio() {
     <section id="portfolio" className="section-padding scroll-mt-24">
       <Container>
         <div className="retro-card p-8">
-          <h2 className="text-3xl font-bold mb-8">Portfolio</h2>
+          <h2 className="text-4xl font-bold mb-8 vt323-regular">Portfolio</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Product Portfolio Card */}
             <div className="retro-card flex flex-col justify-between">
@@ -16,7 +16,7 @@ export default function Portfolio() {
                   Explore my product design and management projects.
                 </p>
               </div>
-              <Link href="/product" className="retro-button w-full text-center">
+              <Link href="/product" className="retro-button w-full text-center ">
                 View Portfolio
               </Link>
             </div>

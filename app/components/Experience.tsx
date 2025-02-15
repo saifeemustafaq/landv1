@@ -86,7 +86,7 @@ export default function Experience() {
     <section id="experience" className="pt-24 pb-16 scroll-mt-32">
       <Container>
         <div className="retro-card p-8">
-          <h2 className="text-3xl font-bold mb-8">Work Experience</h2>
+          <h2 className="text-4xl font-bold mb-8 vt323-regular">Work Experience</h2>
           
           <div className="space-y-6">
             {experiences.length === 0 ? (

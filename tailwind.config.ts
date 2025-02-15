@@ -13,6 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         accent: 'var(--accent)',
         'accent-light': 'var(--accent-light)',
+        primary: '#4A90E2',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

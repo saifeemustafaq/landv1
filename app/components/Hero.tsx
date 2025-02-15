@@ -24,6 +24,12 @@ export default function Hero() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [imageError, setImageError] = useState(false);
+  const [nameColor, setNameColor] = useState(1);
+
+  useEffect(() => {
+    // Set random color on mount and refresh
+    setNameColor(Math.floor(Math.random() * 5) + 1);
+  }, []);
 
   useEffect(() => {
     const fetchBasicInfo = async () => {
@@ -151,13 +157,51 @@ export default function Hero() {
 
             {/* Text Content */}
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-                Hi, I&apos;m <span className="animated-text inline-block" data-text="Mustafa Saifee">Mustafa Saifee</span>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 vt323-regular">
+                <div className="name-wrapper relative inline-block">
+                  <span 
+                    className="invisible" 
+                    aria-hidden="true"
+                    
+                  >
+                    Hi, I&apos;m Mustafa Saifee
+                  </span>
+                  <svg 
+                    className="animated-text absolute left-0 top-0 w-full h-full vt323-regular" 
+                    viewBox="0 0 900 65"
+                    data-color={nameColor}
+                  >
+                    <text 
+                      x="0" 
+                      y="65"
+                      style={{
+                        fontFamily: 'Arial, Helvetica, sans-serif',
+                        fontSize: '80px',
+                        fontWeight: 'bold'
+                      }}
+                    >
+                      <tspan className="non-animated">Hi, I&apos;m </tspan>
+                      <tspan className="animated">Mustafa Saifee</tspan>
+                    </text>
+                    <text 
+                      x="0" 
+                      y="65"
+                      style={{
+                        fontFamily: 'Arial, Helvetica, sans-serif',
+                        fontSize: '80px',
+                        fontWeight: 'bold'
+                      }}
+                    >
+                      <tspan className="non-animated">Hi, I&apos;m </tspan>
+                      <tspan className="animated">Mustafa Saifee</tspan>
+                    </text>
+                  </svg>
+                </div>
               </h1>
-              <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8">
+              <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-4">
                 Product Manager at Microsoft
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 I&apos;m a software engineer passionate about building innovative solutions.
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">

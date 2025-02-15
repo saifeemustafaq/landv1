@@ -5,7 +5,7 @@ export default function Contact() {
     <section id="contact" className="section-padding bg-gray-50 dark:bg-gray-900 scroll-mt-24">
       <Container>
         <div className="retro-card p-8">
-          <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+          <h2 className="text-4xl font-bold mb-6 vt323-regular">Get in Touch</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-8">
             Feel free to reach out for opportunities or just to say hi! I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
           </p>
