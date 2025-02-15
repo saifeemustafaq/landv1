@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="0" y="0" width="150%" height="150%">
+      <feOffset dx="2" dy="2" result="offset"/>
+      <feFlood flood-color="currentColor" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="offset" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Grid Container -->
+  <g>
+    <!-- Top Left Square -->
+    <rect x="6" y="6" width="12" height="12" rx="1" 
+      fill="transparent" 
+      stroke="currentColor" 
+      stroke-width="2"
+      filter="url(#shadow)"/>
+
+    <!-- Top Right Square -->
+    <rect x="22" y="6" width="12" height="12" rx="1" 
+      fill="transparent" 
+      stroke="currentColor" 
+      stroke-width="2"
+      filter="url(#shadow)"/>
+
+    <!-- Bottom Left Square -->
+    <rect x="6" y="22" width="12" height="12" rx="1" 
+      fill="transparent" 
+      stroke="currentColor" 
+      stroke-width="2"
+      filter="url(#shadow)"/>
+
+    <!-- Bottom Right Square -->
+    <rect x="22" y="22" width="12" height="12" rx="1" 
+      fill="transparent" 
+      stroke="currentColor" 
+      stroke-width="2"
+      filter="url(#shadow)"/>
+  </g>
+</svg> 

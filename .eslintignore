@@ -1,0 +1,24 @@
+# Build output
+.next/
+dist/
+out/
+build/
+
+# Dependencies
+node_modules/
+
+# Cache and local files
+.turbo/
+.vercel/
+.cache/
+*.log
+.DS_Store
+
+# Generated files
+public/sw.js
+public/workbox-*.js
+coverage/
+
+# Environment files
+.env*
+!.env.example 

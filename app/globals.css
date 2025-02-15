@@ -3,14 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f5f5f5;
   --foreground: #171717;
+  --accent: #007FFF;
+  --accent-light: #E6F3FF;
+  --card-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.8);
+  --card-border: 2px solid #000000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent: #3B82F6;
+    --accent-light: #1e293b;
+    --card-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.8);
+    --card-border: 2px solid #ffffff;
   }
 }
 
@@ -18,4 +26,66 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Scroll snap styles */
+.scroll-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 4rem; /* Add padding to account for fixed navbar */
+}
+
+.retro-card {
+  @apply bg-white dark:bg-gray-900 rounded-lg p-6;
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: all 0.2s ease;
+}
+
+.retro-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.8);
+}
+
+.nav-link {
+  @apply hover:text-accent transition-colors duration-200;
+}
+
+.section-padding {
+  @apply py-8 px-4 sm:px-8 md:px-16 lg:px-24;
+}
+
+.retro-button {
+  @apply bg-white dark:bg-gray-900 font-medium px-6 py-3;
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: all 0.2s ease;
+}
+
+.retro-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* Experience section styles */
+.experience-item {
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.experience-item:hover {
+  border-left-color: var(--accent);
+  transform: translateX(8px);
 }
