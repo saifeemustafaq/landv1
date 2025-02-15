@@ -152,7 +152,7 @@ export default function Hero() {
             {/* Text Content */}
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-                Hi, I&apos;m <span className="text-accent">Mustafa Saifee</span>
+                Hi, I&apos;m <span className="animated-text inline-block" data-text="Mustafa Saifee">Mustafa Saifee</span>
               </h1>
               <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8">
                 Product Manager at Microsoft
