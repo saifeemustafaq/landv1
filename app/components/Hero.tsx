@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { smoothScrollTo } from '../utils/smoothScroll';
 import Container from './Container';
 
 interface BasicInfo {

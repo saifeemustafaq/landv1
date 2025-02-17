@@ -75,6 +75,27 @@ body {
   box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.8);
 }
 
+.retro-card-reverse {
+  @apply bg-white dark:bg-gray-900 rounded-lg p-6;
+  border: var(--card-border);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.8);
+  transition: all 0.2s ease;
+}
+
+.retro-card-reverse:hover {
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  .retro-card-reverse {
+    box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 0.8);
+  }
+  
+  .retro-card-reverse:hover {
+    box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 0.8);
+  }
+}
+
 .nav-link {
   @apply hover:text-accent transition-colors duration-200;
 }

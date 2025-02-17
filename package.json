@@ -2,12 +2,14 @@
   "name": "land2",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "inspect-db": "ts-node scripts/inspect-db.ts"
+    "inspect-db": "ts-node scripts/inspect-db.ts",
+    "inspect-schema": "node --loader ts-node/esm scripts/inspect-schema.ts"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
@@ -17,6 +19,7 @@
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
     "react-markdown": "^9.0.3",
     "rehype-raw": "^7.0.0"
   },

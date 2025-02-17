@@ -7,27 +7,19 @@ import Container from './Container';
 const tabs = [
   { 
     name: 'Product', 
-    href: '/product',
-    activeColor: 'bg-rose-100 text-rose-800 dark:bg-rose-900/30 dark:text-rose-200',
-    hoverColor: 'hover:bg-rose-50 dark:hover:bg-rose-900/20'
+    href: '/product'
   },
   { 
     name: 'Content', 
-    href: '/content',
-    activeColor: 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-200',
-    hoverColor: 'hover:bg-amber-50 dark:hover:bg-amber-900/20'
+    href: '/content'
   },
   { 
     name: 'Software', 
-    href: '/software',
-    activeColor: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-200',
-    hoverColor: 'hover:bg-emerald-50 dark:hover:bg-emerald-900/20'
+    href: '/software'
   },
   { 
     name: 'Innovation', 
-    href: '/innovate',
-    activeColor: 'bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-200',
-    hoverColor: 'hover:bg-violet-50 dark:hover:bg-violet-900/20'
+    href: '/innovate'
   },
 ];
 
@@ -44,17 +36,17 @@ export default function PortfolioLayout({
         <div className="flex gap-8">
           {/* Sidebar */}
           <div className="w-64 flex-shrink-0">
-            <div className="retro-card p-4">
+            <div className="retro-card-reverse p-4">
               <nav className="space-y-2">
                 {tabs.map((tab) => (
                   <Link
                     key={tab.href}
                     href={tab.href}
-                    className={`block px-4 py-2 rounded transition-colors ${
-                      pathname === tab.href
-                        ? tab.activeColor
-                        : `text-gray-600 dark:text-gray-400 ${tab.hoverColor}`
-                    }`}
+                    className={`block px-4 py-2 rounded-full transition-colors border-2 border-transparent
+                      ${pathname === tab.href
+                        ? 'bg-gray-900 text-white font-bold dark:bg-gray-50 dark:text-gray-900'
+                        : 'text-gray-900 dark:text-gray-50 hover:border-gray-900 dark:hover:border-gray-50'
+                      }`}
                   >
                     {tab.name}
                   </Link>
@@ -65,7 +57,7 @@ export default function PortfolioLayout({
 
           {/* Main Content */}
           <div className="flex-1">
-            <div className="retro-card p-6">
+            <div className="retro-card-reverse p-6">
               {children}
             </div>
           </div>
