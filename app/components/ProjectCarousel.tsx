@@ -22,6 +22,15 @@ const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  // If no projects, show loading or return null
+  if (!projects || projects.length === 0) {
+    return (
+      <div className="relative w-full h-[400px] bg-gray-900 animate-pulse flex items-center justify-center">
+        <div className="text-white text-xl">Loading projects...</div>
+      </div>
+    );
+  }
+
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? '100%' : '-100%',
@@ -47,6 +56,8 @@ const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
     });
   };
 
+  const currentProject = projects[currentIndex];
+
   return (
     <div className="relative w-full h-[400px] bg-black">
       <AnimatePresence initial={false} custom={direction}>
@@ -65,20 +76,20 @@ const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
         >
           {/* Main Image */}
           <div className="relative w-full h-full">
-            {projects[currentIndex].image && (
+            {currentProject.image && (
               <img
                 className="w-full h-full object-cover"
-                src={projects[currentIndex].image.thumbnail}
-                alt={projects[currentIndex].title}
+                src={currentProject.image.thumbnail}
+                alt={currentProject.title}
               />
             )}
             {/* Content Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <h2 className="text-3xl font-bold mb-2">{projects[currentIndex].title}</h2>
-                <p className="text-lg mb-4 line-clamp-2">{projects[currentIndex].description}</p>
+                <h2 className="text-3xl font-bold mb-2">{currentProject.title}</h2>
+                <p className="text-lg mb-4 line-clamp-2">{currentProject.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {projects[currentIndex].tags.map((tag, index) => (
+                  {currentProject.tags.map((tag, index) => (
                     <span
                       key={index}
                       className="px-3 py-1 bg-white/10 backdrop-blur-sm text-sm rounded-full"
@@ -88,7 +99,7 @@ const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
                   ))}
                 </div>
                 <a
-                  href={projects[currentIndex].link}
+                  href={currentProject.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-2 bg-white text-black rounded-lg hover:bg-gray-100 transition-colors"
