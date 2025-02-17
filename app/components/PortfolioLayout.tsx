@@ -57,9 +57,7 @@ export default function PortfolioLayout({
 
           {/* Main Content */}
           <div className="flex-1">
-            <div className="retro-card-reverse p-6">
-              {children}
-            </div>
+            {children}
           </div>
         </div>
       </Container>
