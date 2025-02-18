@@ -8,6 +8,7 @@ export default function Portfolio() {
         <div className="retro-card-reverse p-8">
           <h2 className="text-4xl font-bold mb-8 vt323-regular">Portfolio</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
             {/* Product Portfolio Card */}
             <div className="retro-card-reverse p-6 flex flex-col justify-between">
               <div>
@@ -55,7 +56,7 @@ export default function Portfolio() {
                   Welcome to my innovation playground. Discover boundary-pushing experiments and passion projects that challenge the status quo.
                 </p>
               </div>
-              <Link href="/innovate" className="retro-button w-full text-center">
+              <Link href="/innovation" className="retro-button w-full text-center">
                 View Portfolio
               </Link>
             </div>

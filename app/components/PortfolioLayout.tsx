@@ -38,7 +38,7 @@ const tabs = [
   },
   { 
     name: 'Innovation', 
-    href: '/innovate',
+    href: '/innovation',
     category: 'innovation'
   },
 ];
@@ -142,7 +142,7 @@ export default function PortfolioLayout({
             </div>
 
             {/* Main Content */}
-            <div className="flex-1">
+            <div className="flex-1 min-w-0 overflow-hidden">
               {children}
             </div>
           </div>

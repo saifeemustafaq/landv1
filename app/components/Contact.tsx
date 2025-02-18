@@ -3,7 +3,7 @@ import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker } from 'react-ic
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-padding bg-gray-50 dark:bg-gray-900 scroll-mt-24">
+    <section id="contact" className="section-padding dark:bg-gray-900 scroll-mt-24">
       <Container>
         <div className="retro-card-reverse p-8">
           <h2 className="text-4xl font-bold mb-6 vt323-regular">Get in Touch</h2>
@@ -13,8 +13,8 @@ export default function Contact() {
           <div className="flex flex-col space-y-6">
             {/* Contact Info */}
             <div className="flex flex-col space-y-4">
-              <div className="flex items-center space-x-3">
-                <HiOutlineMail className="w-5 h-5 text-accent" />
+              <div className="flex items-center space-x-3 hover:text-accent transition-colors">
+                <HiOutlineMail className="w-5 h-5" />
                 <a 
                   href="mailto:saifeemustafaq@gmail.com" 
                   className="text-gray-700 dark:text-gray-300 hover:text-accent transition-colors"
@@ -22,8 +22,8 @@ export default function Contact() {
                   saifeemustafaq@gmail.com
                 </a>
               </div>
-              <div className="flex items-center space-x-3">
-                <HiOutlinePhone className="w-5 h-5 text-accent" />
+              <div className="flex items-center space-x-3 hover:text-accent transition-colors">
+                <HiOutlinePhone className="w-5 h-5" />
                 <a 
                   href="tel:+16504396380" 
                   className="text-gray-700 dark:text-gray-300 hover:text-accent transition-colors"
@@ -31,8 +31,8 @@ export default function Contact() {
                   +1 (650) 439-6380
                 </a>
               </div>
-              <div className="flex items-center space-x-3">
-                <HiOutlineLocationMarker className="w-5 h-5 text-accent" />
+              <div className="flex items-center space-x-3 hover:text-accent transition-colors">
+                <HiOutlineLocationMarker className="w-5 h-5" />
                 <span className="text-gray-700 dark:text-gray-300">
                   Seattle, Washington
                 </span>
