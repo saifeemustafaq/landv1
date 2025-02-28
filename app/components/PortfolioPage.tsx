@@ -56,11 +56,11 @@ export default function PortfolioPage({ category }: PortfolioPageProps) {
   }
 
   return (
-    <div className="retro-card-reverse p-6 w-full overflow-hidden">
+    <div className="p-6 mb-5 w-full overflow-hidden">
       <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-8 truncate">All Projects</h2>
       <div className="flex flex-col gap-8">
         {projects.map((project) => (
-          <div key={project._id} className="retro-card-reverse hover:shadow-lg transition-shadow p-6">
+          <div key={project._id} className="retro-card-reverse p-6">
             <div className="flex flex-col md:flex-row items-start gap-6">
               {/* Left Side */}
               <div className="flex flex-col justify-between w-full md:w-48 flex-shrink-0">
@@ -80,7 +80,7 @@ export default function PortfolioPage({ category }: PortfolioPageProps) {
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-gray-50 dark:bg-gray-700 text-sm rounded-full inline-block whitespace-nowrap"
+                      className="px-3 py-1 bg-gray-50 dark:bg-gray-700 text-xs rounded-full inline-block whitespace-nowrap border border-gray-200 dark:border-gray-700"
                     >
                       {tag}
                     </span>
@@ -100,10 +100,10 @@ export default function PortfolioPage({ category }: PortfolioPageProps) {
 
               {/* Right Side */}
               <div className="flex-1 min-w-0 overflow-hidden">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-50 truncate">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-50 break-words">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 break-words line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-300 break-words whitespace-normal">
                   {project.description}
                 </p>
               </div>

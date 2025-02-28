@@ -1,3 +1,4 @@
-featured projects headline for the carousal
-featured projects tag to the projects in admin page
-cards should have see more.
+skeleton loading for the carousal as well as the all projects section.
+View Project button should Have a fixed position on the bottom left of the card.
+Featured Tag to three projects
+

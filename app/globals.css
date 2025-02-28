@@ -87,7 +87,7 @@ body {
 }
 
 .retro-card-reverse:hover {
-  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.8);
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.8);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -201,7 +201,7 @@ export default function Hero() {
                 Product Manager at Microsoft
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                I&apos;m a software engineer passionate about building innovative solutions.
+                I&apos;m a software engineer turned product manager, passionate about building innovative solutions.
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <a 
