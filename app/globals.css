@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +10,13 @@
   --accent-light: #E6F3FF;
   --card-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.8);
   --card-border: 2px solid #000000;
+  
+  /* Subtle name colors */
+  --name-color-1: #4A90E2;  /* Soft Blue */
+  --name-color-2: #50C878;  /* Emerald */
+  --name-color-3: #9B59B6;  /* Soft Purple */
+  --name-color-4: #E67E22;  /* Soft Orange */
+  --name-color-5: #E74C3C;  /* Soft Red */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,14 +27,26 @@
     --accent-light: #1e293b;
     --card-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.8);
     --card-border: 2px solid #ffffff;
+    
+    /* Darker theme subtle colors */
+    --name-color-1: #60A5FA;  /* Lighter Blue */
+    --name-color-2: #6EE7B7;  /* Lighter Emerald */
+    --name-color-3: #C084FC;  /* Lighter Purple */
+    --name-color-4: #FBBF24;  /* Lighter Orange */
+    --name-color-5: #F87171;  /* Lighter Red */
   }
+}
+
+/* Base styles for consistent coloring */
+:root, html, body, #__next {
+  background-color: var(--background);
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+  min-height: 100vh;
 }
 
 /* Scroll snap styles */
@@ -59,6 +79,27 @@ body {
   box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.8);
 }
 
+.retro-card-reverse {
+  @apply bg-white dark:bg-gray-900 rounded-lg p-6;
+  border: var(--card-border);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.8);
+  transition: all 0.2s ease;
+}
+
+.retro-card-reverse:hover {
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  .retro-card-reverse {
+    box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 0.8);
+  }
+  
+  .retro-card-reverse:hover {
+    box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 0.8);
+  }
+}
+
 .nav-link {
   @apply hover:text-accent transition-colors duration-200;
 }
@@ -72,6 +113,8 @@ body {
   border: var(--card-border);
   box-shadow: var(--card-shadow);
   transition: all 0.2s ease;
+  font-family: "VT323", serif;
+  font-size: 1.3rem;
 }
 
 .retro-button:hover {
@@ -88,4 +131,122 @@ body {
 .experience-item:hover {
   border-left-color: var(--accent);
   transform: translateX(8px);
+}
+
+/* Animated text styles */
+.name-wrapper {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.animated-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.animated-text text:first-child {
+  stroke-width: 1.5px;
+}
+
+.animated-text text:first-child .animated {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  fill: none;
+  animation: pathDraw 3s ease forwards;
+}
+
+.animated-text text:last-child .animated {
+  fill: transparent;
+  animation: textFill 0.5s ease forwards 3s;
+}
+
+.animated-text text:first-child .non-animated {
+  stroke: none;
+  fill: var(--foreground);
+}
+
+.animated-text text:last-child .non-animated {
+  fill: var(--foreground);
+}
+
+/* Color variations for stroke */
+.animated-text[data-color="1"] text:first-child .animated { stroke: var(--name-color-1); }
+.animated-text[data-color="2"] text:first-child .animated { stroke: var(--name-color-2); }
+.animated-text[data-color="3"] text:first-child .animated { stroke: var(--name-color-3); }
+.animated-text[data-color="4"] text:first-child .animated { stroke: var(--name-color-4); }
+.animated-text[data-color="5"] text:first-child .animated { stroke: var(--name-color-5); }
+
+/* Color variations for fill */
+.animated-text[data-color="1"] text:last-child .animated { animation-name: textFill1; }
+.animated-text[data-color="2"] text:last-child .animated { animation-name: textFill2; }
+.animated-text[data-color="3"] text:last-child .animated { animation-name: textFill3; }
+.animated-text[data-color="4"] text:last-child .animated { animation-name: textFill4; }
+.animated-text[data-color="5"] text:last-child .animated { animation-name: textFill5; }
+
+@keyframes pathDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes textFill1 {
+  from { fill: transparent; }
+  to { fill: var(--name-color-1); }
+}
+
+@keyframes textFill2 {
+  from { fill: transparent; }
+  to { fill: var(--name-color-2); }
+}
+
+@keyframes textFill3 {
+  from { fill: transparent; }
+  to { fill: var(--name-color-3); }
+}
+
+@keyframes textFill4 {
+  from { fill: transparent; }
+  to { fill: var(--name-color-4); }
+}
+
+@keyframes textFill5 {
+  from { fill: transparent; }
+  to { fill: var(--name-color-5); }
+}
+
+.highlight-name {
+  display: inline-block;
+  transition: color 0.3s ease;
+  font-weight: inherit;
+}
+
+.highlight-name[data-color="1"] {
+  color: var(--name-color-1);
+}
+
+.highlight-name[data-color="2"] {
+  color: var(--name-color-2);
+}
+
+.highlight-name[data-color="3"] {
+  color: var(--name-color-3);
+}
+
+.highlight-name[data-color="4"] {
+  color: var(--name-color-4);
+}
+
+.highlight-name[data-color="5"] {
+  color: var(--name-color-5);
+}
+
+.vt323-regular {
+  font-family: "VT323", serif;
+  font-weight: 400;
+  font-style: normal;
 }

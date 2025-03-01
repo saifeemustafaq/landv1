@@ -9,11 +9,11 @@ import Image from 'next/image';
 
 // Pastel color combinations for different experiences
 const EXPERIENCE_COLORS = [
-  { bg: 'bg-rose-50 dark:bg-rose-900/10', border: 'border-rose-200 dark:border-rose-800', hover: 'hover:bg-rose-100/50 dark:hover:bg-rose-900/20' },
-  { bg: 'bg-sky-50 dark:bg-sky-900/10', border: 'border-sky-200 dark:border-sky-800', hover: 'hover:bg-sky-100/50 dark:hover:bg-sky-900/20' },
-  { bg: 'bg-amber-50 dark:bg-amber-900/10', border: 'border-amber-200 dark:border-amber-800', hover: 'hover:bg-amber-100/50 dark:hover:bg-amber-900/20' },
-  { bg: 'bg-emerald-50 dark:bg-emerald-900/10', border: 'border-emerald-200 dark:border-emerald-800', hover: 'hover:bg-emerald-100/50 dark:hover:bg-emerald-900/20' },
-  { bg: 'bg-violet-50 dark:bg-violet-900/10', border: 'border-violet-200 dark:border-violet-800', hover: 'hover:bg-violet-100/50 dark:hover:bg-violet-900/20' },
+  { text: 'text-rose-600 dark:text-rose-400' },
+  { text: 'text-amber-600 dark:text-amber-400' },
+  { text: 'text-sky-600 dark:text-sky-400' },
+  { text: 'text-emerald-600 dark:text-emerald-400' },
+  { text: 'text-violet-600 dark:text-violet-400' },
 ];
 
 interface ExperienceType {
@@ -85,8 +85,8 @@ export default function Experience() {
   return (
     <section id="experience" className="pt-24 pb-16 scroll-mt-32">
       <Container>
-        <div className="retro-card p-8">
-          <h2 className="text-3xl font-bold mb-8">Work Experience</h2>
+        <div className="retro-card-reverse p-8">
+          <h2 className="text-4xl font-bold mb-8 vt323-regular">Work Experience</h2>
           
           <div className="space-y-6">
             {experiences.length === 0 ? (
@@ -101,7 +101,7 @@ export default function Experience() {
                 return (
                   <div 
                     key={experience._id} 
-                    className={`${colorScheme.bg} ${colorScheme.border} ${colorScheme.hover} rounded-lg border transition-all duration-200 hover:transform hover:-translate-y-1`}
+                    className="bg-white dark:bg-gray-800/50 rounded-lg border-2 border-gray-800 dark:border-gray-600 transition-all duration-200 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(255,255,255,0.12)]"
                   >
                     {/* Header Section */}
                     <div className="p-6 pb-4">
@@ -145,7 +145,7 @@ export default function Experience() {
                         
                         <div className="flex-grow">
                           <div className="flex flex-col gap-2">
-                            <h4 className="text-xl font-bold text-gray-900 dark:text-white">
+                            <h4 className={`text-xl font-bold ${colorScheme.text}`}>
                               {experience.position}
                             </h4>
                             {experience.website ? (
@@ -184,7 +184,7 @@ export default function Experience() {
                         <ReactMarkdown 
                           rehypePlugins={[rehypeRaw]}
                           components={{
-                            u: ({node, ...props}) => <u className="font-semibold border-b-2 border-gray-900 dark:border-gray-100" {...props} />
+                            u: (props) => <span className="border-b border-gray-900 dark:border-gray-100" {...props} />
                           }}
                         >
                           {experience.description}

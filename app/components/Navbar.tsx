@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { smoothScrollTo } from '../utils/smoothScroll';
 import Container from './Container';
 
 export default function Navbar() {
